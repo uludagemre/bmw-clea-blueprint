@@ -10,4 +10,4 @@ RUN apt-get update && \
     pip install -r requirements.txt
 
 # Run dbt when the container launches
-CMD ["dbt", "run", "--target". "prod", "--profiles-dir", "."]
+CMD ["dbt", "run", "--target", "prod", "--profiles-dir", "."]

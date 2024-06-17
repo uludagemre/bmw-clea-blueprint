@@ -7,6 +7,6 @@ resource "aws_cloudwatch_event_rule" "dbt" {
 
 resource "aws_cloudwatch_event_target" "dbt" {
   rule     = aws_cloudwatch_event_rule.dbt.name
-  arn      = aws_sfn_state_machine.elt.arn
+  arn      = aws_sfn_state_machine.bmw_stata_machine.arn
   role_arn = aws_iam_role.sfn.arn
 }

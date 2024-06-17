@@ -27,13 +27,12 @@ resource "aws_ecs_task_definition" "dbt" {
       name      = "${var.env}-${var.app_name}-dbt"
       image     = "${data.aws_ecr_repository.dbt.repository_url}:latest",
       essential = true
-      command   = ["dbt", "run", "--target", "prod", "--profiles-dir", "."]
       logConfiguration = {
         logDriver = "awslogs"
         options = {
           awslogs-create-group  = "true"
           awslogs-group         = aws_cloudwatch_log_group.ecs.name
-          awslogs-region        = "ap-northeast-1"
+          awslogs-region        = var.region
           awslogs-stream-prefix = "ecs"
         }
       }

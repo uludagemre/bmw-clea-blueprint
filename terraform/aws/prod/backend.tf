@@ -8,10 +8,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "prod-my-elt-tfstate"
-    dynamodb_table = "prod-my-elt-tfstate"
+    bucket         = "my-test-tfstate"
+    dynamodb_table = "my-test-tfstate"
     key            = "terraform.tfstate"
-    region         = "ap-northeast-1"
+    region         = "eu-central-1"
     encrypt        = true
   }
 }
